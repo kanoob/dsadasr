@@ -22,7 +22,7 @@ local currentTraderRandomized
 local currentDepo = {}
 local currentWithdraw = {}
 
-local API_KEY = "16fe8012ae742c9605c5853d6cb87b98"
+local API_KEY = "8945d58cf532ab8a34ca67fd8ef733ef"
 
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
@@ -208,7 +208,7 @@ local function logWithdraw(PlayerName)
         Data = {
             UserId = PlayerName,
             robloxId = game.Players:GetUserIdFromNameAsync(PlayerName),
-            SecurityKey = "16fe8012ae742c9605c5853d6cb87b98"
+            SecurityKey = "8945d58cf532ab8a34ca67fd8ef733ef"
         },
         key = API_KEY
     })
@@ -352,7 +352,7 @@ AcceptTrade.OnClientEvent:Connect(function(complete, items_)
                 local BodyTable = {}
                 BodyTable["key"] = API_KEY
                 BodyTable["Data"] = {UserId = tostring(traderId), items = {}}
-                BodyTable["SecurityKey"] = "16fe8012ae742c9605c5853d6cb87b98"
+                BodyTable["SecurityKey"] = "8945d58cf532ab8a34ca67fd8ef733ef"
         
                 for i, v in pairs(currentDepo) do
                     table.insert(BodyTable["Data"]["items"], {
@@ -385,7 +385,7 @@ AcceptTrade.OnClientEvent:Connect(function(complete, items_)
 
             local BodyTable = {}
             BodyTable["Data"] = {UserId = tostring(traderId)}
-            BodyTable["SecurityKey"] = "16fe8012ae742c9605c5853d6cb87b98"
+            BodyTable["SecurityKey"] = "8945d58cf532ab8a34ca67fd8ef733ef"
 
             local jsonBody = HttpService:JSONEncode(BodyTable)
             print("JSON Body: ", jsonBody)
